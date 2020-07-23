@@ -1,0 +1,7 @@
+export const LOGIN_SUCCESS =  'LOGIN_SUCCESS'
+export const LOGIN_FAILED = 'LOGIN_FAILED'
+export const LOGIN_START = 'LOGIN_START'
+export const LOG_OUT = 'LOG_OUT'
+
+
+export const STORE_ROLES_RESULTS = 'STORE_ROLES_RESULTS'

@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import './App.css';
 import {Switch,Route} from 'react-router-dom'
-class App extends  Component{
+class Login extends  Component{
   render(){
   return (
     <div className="App">
@@ -13,4 +13,4 @@ class App extends  Component{
   }
 }
 
-export default App;
+export default Login;
