@@ -1,0 +1,30 @@
+.cartcontent{
+    background-color: white;
+    display: block;
+    padding: 3%;
+    display: flex;  
+    flex-direction: column;
+    /* width: 100vh; */
+    justify-content: space-around;
+}
+
+.cartTitle{
+    font-size: 1.4em;
+    font-weight: 700;
+}
+.item1{
+    width: 100%;
+}
+.item2{
+    width: 150%;
+}
+
+
+@media(min-width:800px){
+
+    .cartcontent{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}

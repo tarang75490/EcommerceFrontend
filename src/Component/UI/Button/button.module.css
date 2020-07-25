@@ -1,0 +1,43 @@
+.button{
+    border: none;
+    color: white;
+    font-size: 1em;
+    background-color: #47526F;
+    padding: 15px;
+    width: 50%;
+    margin-top: 3%;
+    letter-spacing: 2px;
+    outline: none;
+    height: 60px;
+}
+.button:hover{
+   
+    box-shadow: 2px 2px 4px rgb(133, 142, 167);        
+}
+
+.link{
+    display:block;
+    width: 40%;
+    font-size: 1em;
+    background-color: #47526F;
+    padding: 15px;
+    margin: 15px;
+    color: white;
+}
+.link:hover{
+    color: white;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px rgb(133, 142, 167);        
+
+}
+
+@media(min-width:800px){
+
+    .button{
+            font-size: 1em;
+            padding: 15px;
+            width:18%;
+            margin-top: 3%;
+            letter-spacing: 1px;
+    }
+}

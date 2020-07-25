@@ -1,0 +1,39 @@
+.Toolbar{
+    height:75px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    background-color: #47526F;
+    font-style: inherit;
+    color: white;
+    /* justify-content:; */
+    padding:0px 16px;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 90;
+
+}
+
+.Toolbar .nav1{
+    margin-left: 8%;       
+}
+.Toolbar .nav2{
+    left: 70%;
+    position: fixed;
+}
+
+@media(max-width:499px){
+    .nav1 {
+        display:none;
+    }
+    .nav2{
+        display: none;
+    }
+    .Logo{
+        /* height:80% */
+        margin: 0 auto;
+    }
+}
+

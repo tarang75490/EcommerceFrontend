@@ -1,0 +1,11 @@
+.otpinput{
+    width: 8%;
+    outline: none;
+    border:none;
+    background:#E9E9E9;
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 1px dashed black;
+    margin:2%;
+    letter-spacing: 20px;
+}   

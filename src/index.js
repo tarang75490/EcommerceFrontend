@@ -7,10 +7,15 @@ import {BrowserRouter}from 'react-router-dom'
 import {Provider} from 'react-redux'
 import {createStore,compose,combineReducers,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
+import signUpreducer from './Store/reducer/signupReducer'
+import auth from './Store/reducer/auth'
+import otp from './Store/reducer/otp'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer= combineReducers({
-
+  signUp:signUpreducer,
+  login:auth,
+  otp:otp
 })
 const store = createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)))
 
