@@ -1,0 +1,124 @@
+.productScreen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* padding: 3%; */
+}
+
+.filter{
+    background-color: white;
+    width: 25%;
+    padding: 2%;
+    
+    /* margin: 10%; */
+    
+}
+.label {
+    text-align: center;
+    font-size: 1.2em;   
+    font-weight: 400;
+}
+.price{
+    margin-top: 20%;
+    text-align: center;
+    font-size: 1.2em;   
+    font-weight: 400;
+}
+
+.products{
+    background-color: white;
+    width: 70%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header{
+    font-size: 1.1em;
+    font-weight: 800;
+}
+
+.product{
+    width: 28%;
+    padding:2%;
+    margin: 2%;
+    position: relative;
+    display: inline-block;
+    
+}
+.productsbutton{
+    border: 1px solid rgb(187, 186, 186);
+    outline: none;
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 2%;
+    font-weight: 600;
+    width: 80%;
+}
+.product:hover .productsbutton{
+    display: block;
+    height: 10%;
+    
+}
+.product:hover .label{
+    display: none;
+    height: 10%;
+
+    
+}
+.productsbutton:hover{
+    border: 1px solid black;
+}
+
+.product:hover{
+    box-shadow: 1px 1px 5px  rgb(221, 220, 220);
+}
+.product>.productImage{
+    width:100%;
+}
+.product>.info{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media(max-width:500px){
+    .productScreen{
+        flex-direction: column;
+    }
+    .filter{
+        overflow: scroll;
+        padding: 2%;
+        width: 100%;
+        margin-bottom: 5%;
+        bottom: 0;
+        left:0;
+        margin:0;
+
+    }
+    .headerButton{
+        position: fixed;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+        background-color: white;
+        box-shadow: 4px 4px 12px black;
+        width: 100%;
+        bottom: 0;
+        left:0;
+        padding: 4%;
+    }
+    .headerButton >.productImag{
+        box-shadow: none;
+    }
+
+    .products{
+        width:100%;
+        /* flex-direction:column; */
+    }
+    .product{
+        width: 100%;
+    }
+}

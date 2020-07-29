@@ -1,0 +1,109 @@
+.Product{
+    background-color: white;
+    padding:2%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.productImage{
+    width:40%;
+    padding: 2%;
+    padding-left: 4%;
+    display: flex;
+    flex-direction: column;
+}
+.productButton{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-left: 3%;
+}
+
+.productButton> button{
+   
+    outline: none;
+    border:none;
+    width:50%;
+    margin: 2%;
+    padding: 3%;
+}
+
+.productButton> button:hover{
+    box-shadow: 3px 3px 8px  rgb(170, 143, 143);
+    opacity: 0.5 ;
+}
+
+
+.productContent{
+    display: flex;
+    flex-direction: column;
+    padding:2%;
+    width: 50%;
+}
+
+.productContent > .header{
+    font-size: 2em;
+    font-weight: 400;
+
+}
+.header2{
+    font-size: 1.4em;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+
+
+.features{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3em;
+    margin-left: 2%;
+}
+.description{
+    margin-top: 10%;
+}
+.des{
+    font-size: 1.3em;
+}
+
+.instock{
+    margin-left: 2%;
+    color: green;
+    font-size: 1.4em;
+}
+.hurry{
+    margin-left: 2%;
+    color: orange;
+    font-size: 1.4em;
+}
+.left{
+    color: rgb(9, 82, 9);
+    font-size: 1.1em
+}
+.out{
+    margin-left: 2%;
+    color: red;
+    font-size: 1.4em;
+}
+
+.expected{
+    margin-left: 2%;
+    font-size: 1.3em;
+    color: #47526f;
+}
+@media(max-width:500px){
+    .Product{
+        flex-direction: column;
+    }
+    .productImage{
+        width: 100%;
+        margin-bottom: 10%;
+    }
+    .productContent{
+        width: 100%;
+    }
+}

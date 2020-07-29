@@ -1,13 +1,21 @@
 .cartcontent{
     background-color: white;
-    display: block;
-    padding: 3%;
+    padding: 2%;
     display: flex;  
     flex-direction: column;
     /* width: 100vh; */
     justify-content: space-around;
 }
-
+.cartcontent2{
+    display: flex;  
+    flex-direction: column;
+    /* width: 100vh; */
+    justify-content: space-around;
+}
+.emptyTitle{
+    font-size: 1.4em;
+    font-weight: 700;
+}
 .cartTitle{
     font-size: 1.4em;
     font-weight: 700;
@@ -18,11 +26,30 @@
 .item2{
     width: 150%;
 }
+.cartitems{
+    width:70%;
+    background-color: white;
+    padding:2%
+}
+.calculations{
+    width: 25%;
+    background-color: white;
+    padding:2%
+}
+.cartfooter{
+    margin: 0%;
+    box-shadow: 1px 2px 2px black;
+    width: 100%;
+}
 
 
 @media(min-width:800px){
 
     .cartcontent{
+        flex-direction: row;
+        justify-content: space-around;
+    }   
+    .cartcontent2{
         flex-direction: row;
         justify-content: space-around;
     }

@@ -17,7 +17,6 @@ class SignUpForm extends Component{
         show:false,
         formisvalid:false,
         signUpform:{
-
             userName:{
                 elementType:'text',
                 config:{
@@ -30,7 +29,6 @@ class SignUpForm extends Component{
                 },
                 valid:false,
                 touched:false
-
             },
             email:{
                 elementType:'number',

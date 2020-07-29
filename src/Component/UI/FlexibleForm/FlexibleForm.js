@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import classes from './FlexibleForm.module.css'
 import Spinner from '../Spinner/Spinner';
+import { Form ,Col,Row,Button } from 'react-bootstrap';
 class FlexibleFormBox extends Component{
 
 
@@ -18,11 +19,15 @@ class FlexibleFormBox extends Component{
                     break;
                     case "dropdown":
                         input = 
-                        <input as="select"  disabled={this.props.form[formElement].disable} {...this.props.form[formElement].config} onChange={(e)=>this.props.inputChangedHandler(e,formElement)}>
+                        <Row>
+                        <Col sm={10}>
+                        <Form.Control as="select"  disabled={this.props.form[formElement].disable} {...this.props.form[formElement].config} onChange={(e)=>this.props.inputChangedHandler(e,formElement)}>
                         {this.props.form[formElement].options.map((item,index)=>{
                                 return <option key={index} value={item.value}>{item.displayValue}</option>
                             })}
-                              </input>
+                              </Form.Control>
+                              </Col>
+                              </Row>
                      
                     break;
                     case "number":
@@ -39,7 +44,7 @@ class FlexibleFormBox extends Component{
                                 </span>
                         break;
                     case "label":
-                        input = <span>{this.props.form[formElement].label}</span>
+                        input = <span className={classes.label}>{this.props.form[formElement].label}</span>
                         break;
                     case "button" :
                         let cursor = this.props.formisvalid ? "pointer":"not-allowed";

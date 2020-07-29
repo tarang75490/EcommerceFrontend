@@ -16,7 +16,7 @@ class Button extends  Component{
           </a>
           </div>
   }else{
-      but = <button className={classes.button} style={{cursor:cursor,width:this.props.width}}  disabled={this.props.disabled} onClick={this.props.clicked}>{this.props.label}</button>
+      but = <button className={classes.button} style={{cursor:cursor,width:this.props.width,fontSize:this.props.fontSize}}  disabled={this.props.disabled} onClick={this.props.clicked}>{this.props.label}</button>
   }
   const button = this.props.loading ? <Spinner/>:  but;
 

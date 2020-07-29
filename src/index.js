@@ -10,13 +10,23 @@ import thunk from 'redux-thunk'
 import signUpreducer from './Store/reducer/signupReducer'
 import auth from './Store/reducer/auth'
 import otp from './Store/reducer/otp'
+import products from './Store/reducer/products'
+import Product from './Store/reducer/Product'
+import Inventory from './Store/reducer/inventory'
+import Cart from './Store/reducer/Cart'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer= combineReducers({
   signUp:signUpreducer,
   login:auth,
-  otp:otp
+  otp:otp,
+  products:products,
+  product:Product,
+  inventory:Inventory,
+  cart:Cart
 })
+
+
 const store = createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(

@@ -9,12 +9,15 @@ import DashBoard from './Container/Dashboard/Dashboard';
 import VerifyButtons from './Container/Auth/verifyButtons';
 import Verification from './Container/Auth/verification';
 import Cart from './Container/Cart/Cart';
+import products from './Container/Products/products';
+import Product from './Container/Product/Product'
 
 class App extends  Component{
   componentDidMount(){
     this.props.checkAuthState()
   }
   render(){
+    console.log(this.props)
   return (
     <div className="App">
     <Switch>
@@ -24,7 +27,9 @@ class App extends  Component{
       <Route path="/verify"  component={VerifyButtons}/>
       <Route path="/verification"  component={Verification}/>
       <Route path="/cart"  component={Cart}/>
-    </Switch>
+      <Route path="/products/:mainCategory/:subCategory"  component={products}/>
+      <Route path="/product/:productId" component={Product}/>
+      </Switch>
     </div>
   );
   }

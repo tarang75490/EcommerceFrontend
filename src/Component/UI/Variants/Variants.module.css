@@ -1,0 +1,56 @@
+.variant{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1%;
+}
+.colors{
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+}
+.colorSpan{
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    
+}
+
+.color{
+    height: 50px;
+    width: 50px;
+    background-color: silver;
+    display: inline-block;
+}
+
+.colorSpan>.color:hover{
+    border:2px solid black;
+}
+
+.colortitle{
+    font-size: 1em;
+    width: 20px;
+}
+
+.size{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 25% 30%;
+    border:2px solid black;
+
+}
+
+.colorSpan>.size:hover{
+    border:3px solid black;
+}
+
+.price{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.active{
+    border:3px solid black;
+}

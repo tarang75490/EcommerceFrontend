@@ -1,15 +1,38 @@
 export {
-    signingUp
+    signingUp,
 } from './signUp'
 
 
 export{
     startLoginProcess,
     logout,
-     authCheckState
+     authCheckState,
 } from './auth'
 
 export{
     sendingOTP,
-    verifyOTP
+    verifyOTP,
 }from './otp'
+
+
+export{
+    getProducts,
+}from './products'
+
+
+
+export{
+    getProductWithVariants,
+}from './Product'
+
+
+export{
+    getInventory,
+}from './inventory'
+
+
+
+export{
+    addProductsToCart,
+    getProductsOfCart
+}from './Cart'

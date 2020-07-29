@@ -35,17 +35,17 @@ class NavigationItems extends Component {
     let dropdownContents=[]
         if(this.state.dropdownValues){
            
-            Object.keys(this.state.dropdownValues).forEach((key)=>{
+            Object.keys(this.state.dropdownValues).forEach((mainCategory)=>{
                 let navContent=[];
-                this.state.dropdownValues[key].forEach((value)=>{
+                this.state.dropdownValues[mainCategory].forEach((getSubCategory)=>{
                     navContent.push(
-                        <NavigationItem  style={{border:"none"}} type="link"  link={'/'+value} exact>{value}</NavigationItem>
+                        <NavigationItem  style={{border:"none"}} type="link" key={mainCategory+getSubCategory} link={'/products/'+mainCategory+"/"+getSubCategory} exact>{getSubCategory}</NavigationItem>
                     )
                 })
                 dropdownContents.push(
-                    <div className={classes.dropdown}>
-                        <NavigationItem >{key}</NavigationItem>
-                        <div class={classes.dropdowncontent}>
+                    <div className={classes.dropdown} key={mainCategory}>
+                        <NavigationItem >{mainCategory}</NavigationItem>
+                        <div  key={mainCategory} className={classes.dropdowncontent}>
                         {navContent}
                         </div>
                     </div>
@@ -74,7 +74,7 @@ class NavigationItems extends Component {
         nav = <ul className={classes.NavigationItems}>
                 <NavigationItem style={{border:"none"}} type="link" link='/cart' exact>
                         <div className={classes.cart}>
-                             <Logo  style={{border:"none"}} logo={"Cart"}/>
+                             <Logo  style={{border:"none",height:"40%",marginTop:"17%"}} logo={"Cart"}/>
                                 <span style={{border:"none",paddingTop:"25px"}}>CART</span>
                         </div>
                 </NavigationItem>
