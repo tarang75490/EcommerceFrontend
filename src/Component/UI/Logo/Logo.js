@@ -6,6 +6,7 @@ import Profile from '../../../Assets/Images/profile.png'
 import Cart from '../../../Assets/Images/cart.png'
 import Filter from '../../../Assets/Images/filter.jpeg'
 import EmptyCart from '../../../Assets/Images/emptyCart.svg'
+import Dustbin from '../../../Assets/Images/dustbin.png'
 import classes from './Logo.module.css'
 import {Link} from 'react-router-dom'
 
@@ -28,6 +29,8 @@ const Logo = (props) =>{
         image = <img   src={EmptyCart} style={props.style} alt="Colossal Logo" />
     }else if(props.logo === "Filter"){
         image = <img   src={Filter} style={props.style} alt="Colossal Logo" />
+    }else if(props.logo === "Dustbin"){
+        image = <img   src={Dustbin} style={props.style} alt="Colossal Logo" />
     }
     let imageLink = null;
     if(!props.link){

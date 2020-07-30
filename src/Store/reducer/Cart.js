@@ -11,6 +11,10 @@ const initailState={
     cartLoading:null,
     cartError:null,
     cartProducts:null,
+    removeLoading:null,
+    removeError:null,
+    removeData:null
+
 }
 
 const startAddingProduct = (state,action) =>{
@@ -20,7 +24,7 @@ const successAddingProduct = (state,action) =>{
     return UpdateObject(state,{
         error:null,
         loading:false,
-        product:action.product
+        product:action.message
     })
 }
 const failedAddingProduct = (state,action) =>{
@@ -34,13 +38,27 @@ const successGettingProduct = (state,action) =>{
     return UpdateObject(state,{
         cartError:null,
         cartLoading:false,
-        cartProducts:action.product
+        cartProducts:action.products
     })
 }
 const failedGettingProduct = (state,action) =>{
     return UpdateObject(state,{cartError:action.error,cartLoading:false})
 }
 
+const startRemovingProduct = (state,action) =>{
+    return UpdateObject(state,{removeError:null,removeLoading:true})
+}
+const successRemovingProduct = (state,action) =>{
+    return UpdateObject(state,{
+        removeError:null,
+        removeLoading:false,
+        removeData:action.product
+    })
+}
+const failedRemovingProduct = (state,action) =>{
+    return UpdateObject(state,{removeError:action.error,removeLoading:false})
+}
+    
 const reducer =(state=initailState,action) => {
     switch (action.type){
         case actionType.START_ADD_CART: return startAddingProduct(state,action)
@@ -49,6 +67,10 @@ const reducer =(state=initailState,action) => {
         case actionType.START_GET_CART: return startGettingProduct(state,action)
         case actionType.SUCCESS_GET_CART: return  successGettingProduct(state,action)
         case actionType.FAILED_GET_CART: return failedGettingProduct(state,action)
+        case actionType.START_REMOVE_CART: return startRemovingProduct(state,action)
+        case actionType.SUCCESS_REMOVE_CART: return  successRemovingProduct(state,action)
+        case actionType.FAILED_REMOVE_CART: return failedRemovingProduct(state,action)
+        
         default:
             return state
     }

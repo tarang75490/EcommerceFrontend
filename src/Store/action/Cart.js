@@ -7,10 +7,10 @@ export const startAddingCart = () => {
     }
 };
 
-export const successAddingCart = (products) =>{
+export const successAddingCart = (message) =>{
     return{
         type:actionTypes.SUCCESS_ADD_CART,
-        products:products
+        message:message
     }
 }
 
@@ -31,7 +31,7 @@ export const addProductsToCart = (formData) =>{
             if(response.data.status === 'failure'){
                 dispatch((failedAddingCart(response.data.message)))
             }else if(response.data.status === 'success'){
-                let data = response.data.data
+                let data = response.data.message
                 console.log(data)
                 dispatch((successAddingCart(data)))
             }
@@ -47,10 +47,10 @@ export const startRemovingCart = () => {
     }
 };
 
-export const successRemovingCart = (products) =>{
+export const successRemovingCart = (data) =>{
     return{
         type:actionTypes.SUCCESS_REMOVE_CART,
-        products:products
+        product:data
     }
 }
 
@@ -62,17 +62,21 @@ export const failedRemovingCart = (error) => {
 }
 
 
-export const addRemoveFromCart = (formData) =>{
+export const removeFromCart = (formData) =>{
     return dispatch => {
         dispatch(startRemovingCart())
-        axios.cart.post("/addProductsToCart",formData).then((response)=>{
+        console.log(formData)
+        axios.cart.post("/removeProductFromCart",formData).then((response)=>{
             console.log(response.data)
             if(response.data.status === 'failure'){
-                dispatch((failedRemovingCart(response.data.data)))
+                dispatch((failedRemovingCart(response.data.message)))
             }else if(response.data.status === 'success'){
-                let data = response.data.data
+                let data = response.data.message
                 console.log(data)
                 dispatch((successRemovingCart(data)))
+                setTimeout(()=>{
+                    window.location.reload(false)
+                },1000)
             }
         }).catch((e)=>{
             console.log(e)
@@ -86,12 +90,12 @@ export const addRemoveFromCart = (formData) =>{
 export const emptyCart = (formData) =>{
     return dispatch => {
         dispatch(startRemovingCart())
-        axios.cart.post("/addProductsToCart",formData).then((response)=>{
+        axios.cart.post("/emptyProductsFromCart?customerId="+localStorage.getItem("customerId")).then((response)=>{
             console.log(response.data)
             if(response.data.status === 'failure'){
-                dispatch((failedRemovingCart(response.data.data)))
+                dispatch((failedRemovingCart(response.data.message)))
             }else if(response.data.status === 'success'){
-                let data = response.data.data
+                let data = response.data.message
                 console.log(data)
                 dispatch((successRemovingCart(data)))
             }

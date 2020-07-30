@@ -4,7 +4,7 @@ class  CustomSpinner extends Component{
 
 
     render(){
-                return   <div className="loader">Loading...</div>
+                return   <div className="loader" >Loading...</div>
         }
     }
 

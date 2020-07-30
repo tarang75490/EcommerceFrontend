@@ -34,5 +34,7 @@ export{
 
 export{
     addProductsToCart,
-    getProductsOfCart
+    getProductsOfCart,
+    removeFromCart,
+    emptyCart
 }from './Cart'
