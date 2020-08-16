@@ -7,6 +7,10 @@ import Cart from '../../../Assets/Images/cart.png'
 import Filter from '../../../Assets/Images/filter.jpeg'
 import EmptyCart from '../../../Assets/Images/emptyCart.svg'
 import Dustbin from '../../../Assets/Images/dustbin.png'
+import NoProduct from '../../../Assets/Images/no-product-found.png'
+import Instagram from '../../../Assets/Images/instagram.png'
+import Linkedin from '../../../Assets/Images/linkedin.png'
+import Github from '../../../Assets/Images/github2.png'
 import classes from './Logo.module.css'
 import {Link} from 'react-router-dom'
 
@@ -31,16 +35,29 @@ const Logo = (props) =>{
         image = <img   src={Filter} style={props.style} alt="Colossal Logo" />
     }else if(props.logo === "Dustbin"){
         image = <img   src={Dustbin} style={props.style} alt="Colossal Logo" />
+    }else if(props.logo === "NoProduct"){
+        image = <img   src={NoProduct} style={props.style} alt="Colossal Logo" />
+    }else if(props.logo === "Github"){
+        image = <img   src={Github} style={props.style} alt="Colossal Logo" />
+    }else if(props.logo === "Instagram"){
+        image = <img   src={Instagram} style={props.style} alt="Colossal Logo" />
+    }else if(props.logo === "Linkedin"){
+        image = <img   src={Linkedin} style={props.style} alt="Colossal Logo" />
     }
     let imageLink = null;
-    if(!props.link){
+    if(props.link){
         imageLink = <div className={classes.Logo} >
-        <Link to="/dashboard">{image}</Link> 
+        <Link to={props.link}>{image}</Link> 
     </div>
+    }else if(props.alink){
+        image = <a href={props.alink} target="_blank">
+                {image}
+                </a>
+    
     }else{
         imageLink = <div className={classes.Logo} >
     {image}
-    </div>
+    </div>  
     }
     return(image)
 }

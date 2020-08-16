@@ -1,11 +1,19 @@
 .otpinput{
-    width: 8%;
+    width: 3%;
+    height: 50px;
     outline: none;
-    border:none;
-    background:#E9E9E9;
-    font-size: 1.4em;
+    font-size: 1.5em;
+    background-color: rgb(221, 221, 221);
+    border:1px solid rgb(180, 180, 180) ;
+    margin:2% 1%;
     text-align: center;
-    border-bottom: 1px dashed black;
-    margin:2%;
     letter-spacing: 20px;
 }   
+
+.otpinput:focus{
+    border:1px solid black;
+
+}
+.input{
+  
+}

@@ -5,6 +5,19 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.screen2{
+
+    display:flex;
+    flex-direction: column;
+
+}
+.route{
+    font-size: 1.3em;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    color: black;
+}
+
 
 .productImage{
     width:40%;

@@ -15,7 +15,6 @@ class  Carouselcustom extends Component{
                 productImages.push(
                     <div >
                     <img src={image}  />
-                 
                 </div>
                 )
             })

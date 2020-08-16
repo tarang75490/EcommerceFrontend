@@ -1,0 +1,27 @@
+.Payment{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    
+}
+
+.paymentHeader{
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    margin:1%;
+}   
+
+.paymentBody{
+    display: flex;
+    padding: 5%;
+    justify-content: center;
+    background-color: white;
+}
+
+
+.doPayment{
+    background-color: coral;
+    outline: 0;
+    border: 0;
+}

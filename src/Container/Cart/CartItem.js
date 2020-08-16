@@ -33,7 +33,7 @@ class  CartItem extends Component{
         })
         
     }
-    onchangeHandler=(e,mode)=>{
+    onchangeHandler=(e,mode,variantId)=>{
         console.log(e.target.value)
         let quantityToBuy = this.state.quantityToBuy;
         if(mode === 'plus'){
@@ -48,11 +48,19 @@ class  CartItem extends Component{
         this.setState({
             quantityToBuy:quantityToBuy
         })
+        this.props.updateQuantityToBuy({
+            customerId:localStorage.getItem("customerId"),
+            variantId:variantId,
+            quantityToBuy:quantityToBuy
+        })
     }
     modalcloseHandler=()=>{
         this.setState({
             show:false
         })
+    }
+    productHandler=(productId)=>{
+        this.props.history.push("/product/"+productId)
     }
     render(){
         let inventory = null;
@@ -61,6 +69,7 @@ class  CartItem extends Component{
         console.log(this.props.product)
         const modal = this.props.removeData ? <Modal show={this.state.show} modalclosed={this.modalcloseHandler}>{this.props.removeData}</Modal>:null;
         if(this.props.product){
+            
             const button = <button className={classes.remove} onClick={()=>this.removeProductHander(product.variantId)}><Logo logo={"Dustbin"} style={{width:"100%"}}/></button>
                 console.log(this.props.quantity)
                 if (product.quantity){
@@ -75,17 +84,17 @@ class  CartItem extends Component{
             item = <div className={classes.cartItem}> 
                         {modal}
                         {button}
-                        <img className={classes.productImage} src={image} />
-                        <div className={classes.cartitemcontent}>
+                        <img className={classes.productImage} src={image} onClick={()=>this.productHandler(product.productId)} />
+                        <div className={classes.cartitemcontent} onClick={()=>this.productHandler(product.productId)} >
                                 <span className={classes.cartItemheader}>{product.productName}</span>
                                 {inventory}
                                 <div className={classes.price}><span style={{color:"grey"}}>Deal Price </span>: Rs. {product.price}</div>
                          </div>
                          <div className={classes.quantityToBuy}>
                          <div style={{color:"grey",fontSize:"1.5em"}}>Quantity</div><br/>
-                         <span className={classes.sign} onClick={(e)=>this.onchangeHandler(e,"minus")}>&minus;</span> 
+                         <span className={classes.sign} onClick={(e)=>this.onchangeHandler(e,"minus",product.variantId)}>&minus;</span> 
                                  <span className={classes.number}>{this.state.quantityToBuy}</span> 
-                         <span className={classes.sign} onClick={(e)=>this.onchangeHandler(e,"plus")}>&#x2B;</span>
+                         <span className={classes.sign} onClick={(e)=>this.onchangeHandler(e,"plus",product.variantId)}>&#x2B;</span>
                  </div>
                     </div>
         }
@@ -107,6 +116,7 @@ const mapStatetoProps = state =>{
 const mapDispatchtoProps = dispatch => {
     return {
         removeProduct:(req) => dispatch(actions.removeFromCart(req)),
+        updateQuantityToBuy:(req)=> dispatch(actions.updateQuantityToBuy(req))
     }
 }
 

@@ -33,12 +33,13 @@
     width: 150%;
 }
 .cartitems{
-    width:70%;
+    width:100%;
     background-color: white;
-    padding:2%
+    padding:5%;
+    margin-bottom:3%;
 }
 .calculations{
-    width: 25%;
+    width: 100%;
     display: flex;  
     flex-direction: column;
     background-color: white;
@@ -81,7 +82,7 @@
     opacity: 0.9;
 }
 
-@media(min-width:800px){
+@media(min-width:700px){
     .cart{
         
     }
@@ -92,6 +93,14 @@
     .cartcontent2{
         flex-direction: row;
         justify-content: space-around;
+    }
+    .calculations{
+        width: 25%;
+    }
+    .cartitems{
+        width: 70%;
+        padding:2%;
+    margin-bottom:0%;
     }
 
 }

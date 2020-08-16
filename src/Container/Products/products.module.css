@@ -4,6 +4,16 @@
     justify-content: space-around;
     /* padding: 3%; */
 }
+.screen{
+    display: flex;
+    flex-direction: column;
+}
+.route{
+    font-size: 1.3em;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    color: black;
+}
 
 .filter{
     background-color: white;
@@ -82,6 +92,9 @@
     flex-direction: column;
 }
 
+.noProduct{
+    font-size: 2em;
+}
 
 
 @media(max-width:500px){
@@ -96,6 +109,7 @@
         bottom: 0;
         left:0;
         margin:0;
+        z-index:100;
 
     }
     .headerButton{
@@ -119,6 +133,9 @@
         /* flex-direction:column; */
     }
     .product{
+        width: 100%;
+    }
+    .noProduct>img{
         width: 100%;
     }
 }

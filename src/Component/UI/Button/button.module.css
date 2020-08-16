@@ -14,7 +14,9 @@
    
     box-shadow: 2px 2px 4px rgb(133, 142, 167);        
 }
-
+.button:focus{
+    border:1px solid black;
+}
 .link{
     display:block;
     width: 40%;

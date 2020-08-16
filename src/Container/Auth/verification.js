@@ -12,9 +12,9 @@ import axios from '../../axios';
 import Loading from '../../Component/UI/LoadingText/LoadingText'
 class Verification extends  Component{
     state = {
-        otp: '',
+        otp:["","","",""],
         mode:"resend",
-        show: true
+        show: false
     }
     
     clickeHandler = (mode) =>{
@@ -25,14 +25,23 @@ class Verification extends  Component{
         if(mode === "resend"){
             this.props.sendOTP()
         }else if(mode ==="verify"){
-            this.props.verifyOTP(this.state.otp)
+            this.props.verifyOTP(this.state.otp.join(""))
         }
+        setTimeout(()=>{
+            this.setState({
+                show:false
+            })
+        },1000)
     }
      
-      handleChange = (e) =>{
+      handleChange = (e,input) =>{
+          let otp = [...this.state.otp]
+          otp[input] = e.target.value
+          console.log(otp)
           this.setState({
-              otp:e.target.value
+              otp : otp
           })
+      
       };
       modalclosedHandler =()=>{
         this.setState({
@@ -41,8 +50,12 @@ class Verification extends  Component{
     }
 
   render(){
+      console.log(this.state.otp.join(""))
       let resendloading = this.state.mode==="resend"&&this.props.loading;
         let message=null;
+        if(this.state.otp[3]){
+            this.props.verifyOTP(this.state.otp.join(""))
+          }
         console.log(this.props.message)
         if(!this.props.loading){
             if(this.props.error){
@@ -59,14 +72,14 @@ class Verification extends  Component{
     <div className={classes.Main}>
             {message}
             <div  className={classes.Logo}>
-                <center><Logo logo="LightLogo" style={{width:"40%"}}/></center>
+                <center><Logo logo="LightLogo" style={{width:"60%"}}/></center>
             </div>
             <center>
                 <h1 className={classes.heading}>Enter Your OTP</h1>
             </center>
             <div className={classes.Form}>
                 <center>
-                    <OTPinput value={this.state.otp} change={(e)=>this.handleChange(e)}/>
+                    <OTPinput value={this.state.otp} change={this.handleChange}/>
                 </center>
             </div>
             <center>

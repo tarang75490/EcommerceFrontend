@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import Layout from '../../Component/Layout/Layout'
-import { withRouter } from 'react-router-dom';
+import { withRouter,Link } from 'react-router-dom';
 import classes from './Product.module.css'
 import {connect} from "react-redux";
 import axios from '../../axios';
@@ -26,10 +26,14 @@ class Product extends  Component{
         active:0,
         inventory:null,
         authorized:false,
-        show:false
+        show:false,
+        productName:null,
+        mainCategory:null,
+        subCategory:null
     }
     shouldComponentUpdate(nextProps){
         if(this.props.match.params !== nextProps.match.params){
+            console.log(this.props.product)
             window.location.reload(false)
         }
 
@@ -52,8 +56,13 @@ class Product extends  Component{
     }
     initiallize=(inventory)=>{
         this.setState({
-             inventory:inventory[0].reservedInventory
+             inventory:inventory[0].reservedInventory,
+             productName:this.props.product.productName,
+             mainCategory:this.props.product.mainCategory,
+             subCategory:this.props.product.subCategory
         })
+        console.log(this.props.product)
+        
     }
     onChangeHandler=(active)=>{
         this.setState({
@@ -89,6 +98,11 @@ class Product extends  Component{
         this.setState({
             show:true
         })
+        setTimeout(()=>{
+            this.setState({
+                show:false
+            })
+        },2000)
     }
     modalclosedHandler =()=>{
         this.setState({
@@ -108,7 +122,8 @@ class Product extends  Component{
     let addtocartButton = this.props.cartLoading ? <CustomSpinner/> :          <button onClick={()=>this.onClickHandler("cart")} disabled={buttondisabled} style={addbuttonStyle}>ADD TO CART</button>;
     let modal = this.props.cartError ? <Modal show={this.state.show} modalclosed={this.modalclosedHandler} >{this.props.cartError}</Modal>:null;
     if(this.props.loading){ 
-        productImages = <ContentLoader/>
+        productImages = <ContentLoader content="productImage"/>
+        productContent = <ContentLoader content="productContent"/>
     }else{
         if(this.props.product){
             let Description=[]
@@ -162,12 +177,15 @@ class Product extends  Component{
   return (
     <Layout>
         {modal}
+        <div className={classes.screen2}>
+        <span className={classes.route}><Link to="/dashboard">Home{" "}</Link>{" "}/{" "}{this.state.mainCategory}{" "}/{" "}{this.state.subCategory}{" "}/{" "}{this.state.productName}</span>
         <div className={classes.Product}>
         <div className={classes.productImage}>
         {productImages}
         {buttons}
         </div>
         {productContent}
+        </div>
         </div>
       
     </Layout>

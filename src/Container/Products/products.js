@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import Layout from '../../Component/Layout/Layout'
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route ,Link} from 'react-router-dom';
 import classes from './products.module.css'
 import {connect} from "react-redux";
 import axios from '../../axios';
@@ -11,6 +11,7 @@ import Logo from '../../Component/UI/Logo/Logo';
 import Button from '../../Component/UI/Button/button';
 import utilityFunction from '../UtilityFunction/utilityFunction'
 import CustomSpinner from '../../Component/UI/Spinner/Spinner';
+import NoProduct from '../../Assets/Images/no-product-found.png'
 import FlexibleFormBox from '../../Component/UI/FlexibleForm/FlexibleForm';
 import ContentLoader from '../../Component/UI/ContentLoader/contentLoader'
 import ProductRating from '../../Component/UI/ProductRating/ProductRating'
@@ -22,7 +23,7 @@ const queryString = require("query-string")
 class Product extends  Component{
     state={
         authorized:false,
-        show:true
+        show:false
     }
     shouldComponentUpdate(nextProps){
         if(this.props.match.params !== nextProps.match.params){
@@ -87,6 +88,7 @@ class Product extends  Component{
     console.log(this.props.cartLoading,this.props.cartError,this.props.message)
     console.log(this.props.products)
     let modal;
+    console.log(this.state.show)
     if(this.props.cartError ||  this.props.message){
         modal = <Modal show={this.state.show} modalclosed={this.modalclosed}>{this.props.cartError? this.props.cartError:this.props.message}</Modal>
     }
@@ -95,11 +97,12 @@ class Product extends  Component{
     }else{
 
         if(this.props.products){
+            if(this.props.products.length>0){
             this.props.products.forEach((product)=>{
-                console.log(product)
+                // console.log(product)
                 
                 let image = "https://ecommerce12.s3.ap-south-1.amazonaws.com/"+product.productFeatures.thumbnails[0]
-    
+                console.log(product.productFeatures.thumbnails)
                 let prod = <div className={classes.product}>
                             
                             <img className={classes.productImage} src={image} onClick={()=>this.productHandler(product)}onClick={()=>this.productHandler(product)}/>
@@ -115,16 +118,22 @@ class Product extends  Component{
                 products.push(prod)
             })
         }else{
-            products = <span>No Product Found</span>
+            products = <span className={classes.noProduct}>
+                            <img src={NoProduct} alt="NoProduct"  />
+                            </span>
         }
+    }
     }
   return (
     <Layout>
+        <div className={classes.screen}>
+        <span className={classes.route}><Link to="/dashboard">Home{" "}</Link>/{" "}{this.props.match.params.mainCategory}{" "}/{" "}{this.props.match.params.subCategory}</span>
         <div className={classes.productScreen}>
         {modal}
         <Filter/>
         <Logo logo="filter" style={{width:"1000%"}}/>
         <div className={classes.products}>{products}</div>
+        </div>
         </div>
     </Layout>
   );

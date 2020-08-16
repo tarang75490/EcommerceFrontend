@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+    import React,{Component} from 'react'
 import classes from './FlexibleForm.module.css'
 import Spinner from '../Spinner/Spinner';
 import { Form ,Col,Row,Button } from 'react-bootstrap';

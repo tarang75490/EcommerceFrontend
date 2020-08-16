@@ -1,0 +1,38 @@
+.about{
+    font-size: 130%;
+    margin: 5%;
+}
+
+.aboutHeader{
+    font-weight: 600;
+    font-size: 150%;
+    letter-spacing: 2px;
+}
+.line{
+    border:1px solid black;
+}
+.content{
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+li{
+    word-spacing: 2px;
+}
+b{
+    color: rgb(58, 58, 90);
+}
+.disclaimer{
+    color: rgb(104, 67, 67);
+    text-decoration: underline;
+}
+
+
+@media(max-width:500px){
+    .about{
+        font-size: 100%;
+    }
+    .aboutHeader{
+        font-size: 130%;
+    }
+}

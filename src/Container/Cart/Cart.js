@@ -25,6 +25,9 @@ class Cart extends  Component{
         }
         this.props.getProducts()
     }
+    checkOutHandler = () =>{
+        this.props.history.push("/payment")
+    }
 
 
   render(){
@@ -61,7 +64,7 @@ class Cart extends  Component{
                     })
                     summary.push(<span><hr/></span>)
                     summary.push(<span className={classes.subtotal}><span style={{color:"grey",width:"20%"}}>Total: </span> {total}</span>)
-                    summary.push(<button className={classes.buy}>PROCEED TO BUY</button>)
+                    summary.push(<button className={classes.buy} onClick={this.checkOutHandler}>CHECKOUT TO BUY</button>)
                 }else{
                     products= <span className={classes.emptyCart}>
                     <img src={emptyCart}  /></span>

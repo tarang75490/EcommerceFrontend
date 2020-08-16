@@ -14,6 +14,8 @@ import products from './Store/reducer/products'
 import Product from './Store/reducer/Product'
 import Inventory from './Store/reducer/inventory'
 import Cart from './Store/reducer/Cart'
+import payment from './Store/reducer/payment'
+import profile from './Store/reducer/profile'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer= combineReducers({
@@ -23,7 +25,9 @@ const rootReducer= combineReducers({
   products:products,
   product:Product,
   inventory:Inventory,
-  cart:Cart
+  cart:Cart,
+  payment:payment,
+  profile:profile
 })
 
 

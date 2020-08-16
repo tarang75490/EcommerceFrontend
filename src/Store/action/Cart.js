@@ -37,7 +37,7 @@ export const addProductsToCart = (formData) =>{
             }
         }).catch((e)=>{
             console.log(e)
-            dispatch(failedAddingCart(e))
+            dispatch(failedAddingCart("Unable to add the product to cart 400 Error"))
         })
     }
 }
@@ -170,7 +170,7 @@ export const failedUpdatingCart = (error) => {
 export const updateQuantityToBuy = (formData) =>{
     return dispatch => {
         dispatch(startUpdatingCart())
-        axios.cart.post("/addProductsToCart",formData).then((response)=>{
+        axios.cart.put("/updateQuantityToBuy",formData).then((response)=>{
             console.log(response.data)
             if(response.data.status === 'failure'){
                 dispatch((failedUpdatingCart(response.data.data)))

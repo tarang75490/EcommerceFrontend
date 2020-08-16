@@ -3,6 +3,8 @@ import classes from './Layout.module.css'
 import Toolbar from  '../Navigation/Toolbar/Toolbar'
 import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+import Logo from '../UI/Logo/Logo'
 class Layout extends Component{
 
 state={
@@ -29,6 +31,16 @@ SidedrawertoggleHandler=()=>{
             <main className={classes.Content}>
                 {this.props.children}
             </main>
+            
+            <center className={classes.pageFooter}>
+            <Link to={"/about"} style={{cursor:"Pointer",color:"white"}}>About me</Link>
+            Made BY Tarang 
+            <center>
+            <Logo style={{width:"3%"}} alink={"https://github.com/tarang75490" } logo={'Instagram'}/>
+            <Logo style={{width:"2%"}} alink={"https://github.com/tarang75490" }logo={'Github'} />
+            <Logo style={{width:"2%"}} alink={"https://www.linkedin.com/in/tarang-khetan-05356b179/" } logo={'Linkedin'}/>
+            </center>
+            </center>
     </React.Fragment>
         );
 }

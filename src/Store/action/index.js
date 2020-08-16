@@ -36,5 +36,16 @@ export{
     addProductsToCart,
     getProductsOfCart,
     removeFromCart,
-    emptyCart
+    emptyCart,
+    updateQuantityToBuy
 }from './Cart'
+
+
+export{
+    initializeAndMakePayment
+}from './Payment'
+
+export{
+    getProfile,
+    getProfileHistory
+} from './profile'

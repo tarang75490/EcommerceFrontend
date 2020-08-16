@@ -40,7 +40,7 @@ class VerifyButtons extends  Component{
     <div className={classes.Main}>
     {message}
             <div  className={classes.Logo}>
-                <center><Logo logo="LightLogo" style={{width:"40%"}}/></center>
+                <center><Logo logo="LightLogo" style={{width:"60%"}}/></center>
             </div>
             <center>
                 <h1 className={classes.heading}>Verify Your Account !!</h1>

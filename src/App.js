@@ -11,7 +11,9 @@ import Verification from './Container/Auth/verification';
 import Cart from './Container/Cart/Cart';
 import products from './Container/Products/products';
 import Product from './Container/Product/Product'
-
+import Payment from './Container/Payment/Payment'
+import Profile from './Container/Profile/Profile';
+import About from './Container/About/about';
 class App extends  Component{
   componentDidMount(){
     this.props.checkAuthState()
@@ -29,6 +31,9 @@ class App extends  Component{
       <Route path="/cart"  component={Cart}/>
       <Route path="/products/:mainCategory/:subCategory"  component={products}/>
       <Route path="/product/:productId" component={Product}/>
+      <Route path="/payment" component={Payment}/>
+      <Route path="/profile" component={Profile}/>
+      <Route path="/about" component={About}/>
       </Switch>
     </div>
   );
