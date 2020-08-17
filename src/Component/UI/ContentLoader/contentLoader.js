@@ -2,8 +2,9 @@ import React,{Component} from 'react'
 import ContentLoader, { Facebook } from 'react-content-loader'
 
 class ContentLoade extends Component {
-
+  
     render (){
+
         let contentLoader = null;
         if(this.props.content === 'filterform'){
             contentLoader = <ContentLoader 

@@ -1,4 +1,4 @@
-.NavigationItems {
+.NavigationItems  {
     margin:0;
     padding:0;
     list-style: none;
@@ -8,17 +8,31 @@
     height: 100%;
 }
 
-@media(min-width:500px){
-    .NavigationItems{
-        flex-flow:row;
-    }
-}
+
 .cart{
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   border: none;
 }
+.cart>span{
+  padding-top:25px;
+  padding-left: 10px;
+  border:0;
+}
+
+@media(min-width:500px){
+   .NavigationItems{
+        flex-flow:row;
+    }
+    .cart>span{
+      padding-top:25px;
+      border:0;
+    }
+   
+
+}
+
 
 
 .dropbtn {
@@ -51,6 +65,8 @@
     display: block;
   }
 
-  .dropdowncontent a:hover {background-color: rgb(135, 137, 143);}
+  .dropdowncontent a:hover {
+        background-color: rgb(135, 137, 143);
+      }
 
 .dropdown:hover .dropdowncontent {display: block;}

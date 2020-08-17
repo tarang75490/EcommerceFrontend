@@ -92,8 +92,9 @@ class Product extends  Component{
     if(this.props.cartError ||  this.props.message){
         modal = <Modal show={this.state.show} modalclosed={this.modalclosed}>{this.props.cartError? this.props.cartError:this.props.message}</Modal>
     }
+    
     if(this.props.loadingProducts){
-        products = <ContentLoader content="products"/>
+        products = [<ContentLoader content={"products"}/>]
     }else{
 
         if(this.props.products){
@@ -124,6 +125,7 @@ class Product extends  Component{
         }
     }
     }
+    console.log(products)
   return (
     <Layout>
         <div className={classes.screen}>
@@ -132,7 +134,9 @@ class Product extends  Component{
         {modal}
         <Filter/>
         <Logo logo="filter" style={{width:"1000%"}}/>
-        <div className={classes.products}>{products}</div>
+        <div className={classes.products}>
+        {products}
+        </div>
         </div>
         </div>
     </Layout>

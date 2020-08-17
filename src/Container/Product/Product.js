@@ -119,7 +119,7 @@ class Product extends  Component{
     let buttondisabled = this.state.inventory <=  0 ;
     let buybuttonStyle= buttondisabled ? {cursor:"not-allowed",opacity:"0.5",backgroundColor:"#F74A00"} : {backgroundColor:"#F74A00"};
     let addbuttonStyle= buttondisabled ? {cursor:"not-allowed",opacity:"0.5",backgroundColor:"#FCA503"} : {backgroundColor:"#FCA503"};
-    let addtocartButton = this.props.cartLoading ? <CustomSpinner/> :          <button onClick={()=>this.onClickHandler("cart")} disabled={buttondisabled} style={addbuttonStyle}>ADD TO CART</button>;
+    let addtocartButton = this.props.cartLoading ? <CustomSpinner/> :      <button onClick={()=>this.onClickHandler("cart")} disabled={buttondisabled} style={addbuttonStyle}>ADD TO CART</button>;
     let modal = this.props.cartError ? <Modal show={this.state.show} modalclosed={this.modalclosedHandler} >{this.props.cartError}</Modal>:null;
     if(this.props.loading){ 
         productImages = <ContentLoader content="productImage"/>

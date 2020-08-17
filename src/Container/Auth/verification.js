@@ -53,9 +53,9 @@ class Verification extends  Component{
       console.log(this.state.otp.join(""))
       let resendloading = this.state.mode==="resend"&&this.props.loading;
         let message=null;
-        if(this.state.otp[3]){
-            this.props.verifyOTP(this.state.otp.join(""))
-          }
+        // if(this.state.otp[3]){
+        //     this.props.verifyOTP(this.state.otp.join(""))
+        //   }
         console.log(this.props.message)
         if(!this.props.loading){
             if(this.props.error){
@@ -89,7 +89,7 @@ class Verification extends  Component{
                     <Button loading={this.state.mode==="verify"&&this.props.loading} 
                             disabled={resendloading}
                             label= {"Verify"}  
-                            width={"10%"}  
+                            
                             clicked={()=>this.clickeHandler("verify")} />
             </center>
             

@@ -28,6 +28,7 @@
     .NavigationItem {
         margin:3%;  
         display: flex;
+        
        /* align-self: center; */
         height: 100%;
         width:auto

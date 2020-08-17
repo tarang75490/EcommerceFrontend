@@ -38,7 +38,7 @@ export const initializeAndMakePayment = () =>{
                     if(response.data.status === 'failure'){
                         dispatch((failedDoingPayment(response.data.data)))
                     }else if(response.data.status === 'success'){
-                        let data = response.data.message
+                        let data = response.data.data
                         console.log(response)
                         dispatch((successDoingPayment(data)))
                     }

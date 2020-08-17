@@ -12,7 +12,7 @@ if (props.type==="link"){
     to={props.link}
     >{props.children}</NavLink>
 }else{
-    link = <span onClick={props.clicked} style={props.style}>{props.children}</span>
+    link = <span  onClick={props.clicked} style={props.style}>{props.children}</span>
 }
 
 return(

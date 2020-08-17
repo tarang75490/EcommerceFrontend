@@ -68,6 +68,27 @@ class About extends  Component{
      <li> <b>Config</b></li>
      </ul> 
      <p className={classes.content}>
+     Feature In this Project :
+     </p>
+     <ul>
+     <li> <b>One Time Veification On SignUp </b></li>
+     <li> <b>Cart To Add Products</b></li>
+     <li> <b>Email Sent After Successfull Payment and Welcome Email</b></li>
+     <li> <b>Inventory Management</b></li>
+     <li>  <b>Variant Property</b></li>
+     <li> <b>Buy All Product Present in Cart</b></li>
+     </ul> 
+     <p className={classes.content}>
+     Feature On process to be added :
+     </p>
+     <ul>
+     <li> <b>Forgot Password </b></li>
+     <li> <b>Dashboard</b></li>
+     <li> <b>Update User Profile</b></li>
+     <li> <b>Payement To Buy Directly a single product without goint into cart</b></li>
+    
+     </ul> 
+     <p className={classes.content}>
      <span className={classes.disclaimer}>Disclaimer :</span> <br/>
      I have Not Copied the Code or Done Some Specific Course to Write the code. All the code is Written By Myself after Studing and analysing the structure of Ecommerce Site
      </p>

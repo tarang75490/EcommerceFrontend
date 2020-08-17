@@ -39,12 +39,12 @@ class NavigationItems extends Component {
                 let navContent=[];
                 this.state.dropdownValues[mainCategory].forEach((getSubCategory)=>{
                     navContent.push(
-                        <NavigationItem  style={{border:"none"}} type="link" key={mainCategory+getSubCategory} link={'/products/'+mainCategory+"/"+getSubCategory} exact>{getSubCategory}</NavigationItem>
+                        <NavigationItem  style={{border:"none",color:"white"}} type="link" key={mainCategory+getSubCategory} link={'/products/'+mainCategory+"/"+getSubCategory} exact>{getSubCategory}</NavigationItem>
                     )
                 })
                 dropdownContents.push(
                     <div className={classes.dropdown} key={mainCategory}>
-                        <NavigationItem >{mainCategory}</NavigationItem>
+                        <NavigationItem style={{border:"none",color:"white"}}>{mainCategory}</NavigationItem>
                         <div  key={mainCategory} className={classes.dropdowncontent}>
                         {navContent}
                         </div>
@@ -72,13 +72,15 @@ class NavigationItems extends Component {
 
     if (this.props.navItems === "items"){
         nav = <ul className={classes.NavigationItems}>
+        <center>
                 <NavigationItem style={{border:"none"}} type="link" link='/cart' exact>
                         <div className={classes.cart}>
                              <Logo  style={{border:"none",height:"40%",marginTop:"17%"}} logo={"Cart"}/>
-                                <span style={{border:"none",paddingTop:"25px"}}>CART</span>
+                                <span >CART</span>
                         </div>
                 </NavigationItem>
-        {authLinks}
+                </center>
+       <center> {authLinks}</center>
          </ul>
     }else if (this.props.navItems === "essentials"){
         nav = <ul className={classes.NavigationItems}>

@@ -1,28 +1,75 @@
 .container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    max-width: 400px;
+
   }
-  
-  .container img {
-    width:100vh;
-    height: 100px;
-    height: auto;
+  .container2{
+    margin:6% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
   }
+  .text{
+    font-size: 3em;
+    text-shadow: 1px 1px 3px grey;
+  }
+  .images{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+.images>img{
+  width:100%;
+  opacity: 1;
+}
+.images>img:hover{
+  box-shadow: 2px 2px 6px black ;
+  border: 1px solid black;
+}
   
-  .container .btn {
-    position: absolute;
-    transform: translate(320%, -210%);
-    background-color: transparent;
-    border: 3px solid black;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-  } 
+.container>img{
+    align-items: center;
+    width: 100%;
+  }
+
+  .container h1{
+  position: absolute;
+  margin-top: 12%;
+  background-color: transparent;
+  font-weight: 300;
+  color: rgb(105, 117, 143);
+  font-size: 2.5em;
+  text-align: center;
+  text-shadow: 1px 1px 3px grey;
+  }
+  h1 b{
+    font-weight: 400;
+  }
 
   .btn:hover{
   opacity: 0.7;
+  }
+
+  @media(min-width:700px){
+    .container2{
+      flex-direction: row;
+    }
+    .container>img{
+      width: 100%;
+      height: 500px;
+      opacity: 0.6;
+    }
+    .images>img{
+      width:33.333%;
+      opacity: 1;
+    }
+    .container h1{
+      font-size: 4em;
+    }
   }

@@ -1,5 +1,5 @@
 .otpinput{
-    width: 3%;
+    width: 12%;
     height: 50px;
     outline: none;
     font-size: 1.5em;
@@ -16,4 +16,11 @@
 }
 .input{
   
+}
+
+
+@media(min-width:700px){
+    .otpinput{
+    width: 3%;
+    }
 }

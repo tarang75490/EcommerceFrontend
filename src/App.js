@@ -14,6 +14,7 @@ import Product from './Container/Product/Product'
 import Payment from './Container/Payment/Payment'
 import Profile from './Container/Profile/Profile';
 import About from './Container/About/about';
+import Introduction from './Container/Introduction';
 class App extends  Component{
   componentDidMount(){
     this.props.checkAuthState()
@@ -23,6 +24,7 @@ class App extends  Component{
   return (
     <div className="App">
     <Switch>
+    <Route path="/" exact component={Introduction}/>
     <Route path="/dashboard" component={DashBoard}/>
       <Route path="/login"  component={Login}/>
       <Route path="/signUp"  component={SignUp}/>
@@ -34,6 +36,7 @@ class App extends  Component{
       <Route path="/payment" component={Payment}/>
       <Route path="/profile" component={Profile}/>
       <Route path="/about" component={About}/>
+
       </Switch>
     </div>
   );
